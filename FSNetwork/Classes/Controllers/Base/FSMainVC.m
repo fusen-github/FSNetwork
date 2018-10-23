@@ -29,13 +29,16 @@ static NSString * const kControllerKey = @"controller";
     
     self.tableView = tableView;
     
+    tableView.cellLayoutMarginsFollowReadableWidth = NO;
+    
     tableView.delegate = self;
     
     tableView.dataSource = self;
     
     [self.view addSubview:tableView];
     
-    self.dataArray = @[@{kTitleKey:@"初识网络",kControllerKey:@"FSController01"},];
+    self.dataArray = @[@{kTitleKey:@"初识网络",kControllerKey:@"FSController01"},
+                       @{kTitleKey:@"下载",kControllerKey:@"FSController02"},];
     
 }
 

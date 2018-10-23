@@ -12,10 +12,14 @@
 		04AAE059217D986F00CC14CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE058217D986F00CC14CC /* Assets.xcassets */; };
 		04AAE05C217D986F00CC14CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE05A217D986F00CC14CC /* LaunchScreen.storyboard */; };
 		04AAE05F217D986F00CC14CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE05E217D986F00CC14CC /* main.m */; };
-		04AAE069217E0D6500CC14CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AAE068217E0D6500CC14CC /* SystemConfiguration.framework */; };
 		04AAE071217E0F7D00CC14CC /* FSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE06F217E0F7D00CC14CC /* FSBaseViewController.m */; };
 		04AAE074217E0FE100CC14CC /* FSMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE073217E0FE100CC14CC /* FSMainVC.m */; };
 		04AAE077217E114300CC14CC /* FSController01.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE076217E114300CC14CC /* FSController01.m */; };
+		04AAE07E217EEC3100CC14CC /* FSDownloadTaskDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE07D217EEC3100CC14CC /* FSDownloadTaskDownloader.m */; };
+		04AAE083217EF89500CC14CC /* FSController02.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE082217EF89500CC14CC /* FSController02.m */; };
+		04AAE086217F17EB00CC14CC /* FSDataTaskDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE085217F17EB00CC14CC /* FSDataTaskDownloader.m */; };
+		04B97BD3217F5C6200AD7C42 /* FSController02Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B97BD2217F5C6100AD7C42 /* FSController02Cell.m */; };
+		04B97BDA217F5F1A00AD7C42 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B97BD8217F5F1A00AD7C42 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,17 @@
 		04AAE073217E0FE100CC14CC /* FSMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSMainVC.m; sourceTree = "<group>"; };
 		04AAE075217E114300CC14CC /* FSController01.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSController01.h; sourceTree = "<group>"; };
 		04AAE076217E114300CC14CC /* FSController01.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSController01.m; sourceTree = "<group>"; };
+		04AAE07C217EEC3100CC14CC /* FSDownloadTaskDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDownloadTaskDownloader.h; sourceTree = "<group>"; };
+		04AAE07D217EEC3100CC14CC /* FSDownloadTaskDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDownloadTaskDownloader.m; sourceTree = "<group>"; };
+		04AAE081217EF89500CC14CC /* FSController02.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSController02.h; sourceTree = "<group>"; };
+		04AAE082217EF89500CC14CC /* FSController02.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSController02.m; sourceTree = "<group>"; };
+		04AAE084217F17EB00CC14CC /* FSDataTaskDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDataTaskDownloader.h; sourceTree = "<group>"; };
+		04AAE085217F17EB00CC14CC /* FSDataTaskDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDataTaskDownloader.m; sourceTree = "<group>"; };
+		04B97BD1217F5C6100AD7C42 /* FSController02Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSController02Cell.h; sourceTree = "<group>"; };
+		04B97BD2217F5C6100AD7C42 /* FSController02Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSController02Cell.m; sourceTree = "<group>"; };
+		04B97BD8217F5F1A00AD7C42 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		04B97BD9217F5F1A00AD7C42 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		04B97BDC217F5F4A00AD7C42 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AAE069217E0D6500CC14CC /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,15 +83,8 @@
 		04AAE04E217D986D00CC14CC /* FSNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				04AAE04F217D986D00CC14CC /* AppDelegate.h */,
-				04AAE050217D986D00CC14CC /* AppDelegate.m */,
-				04AAE06D217E0F7D00CC14CC /* Controllers */,
-				04AAE052217D986D00CC14CC /* ViewController.h */,
-				04AAE053217D986D00CC14CC /* ViewController.m */,
-				04AAE058217D986F00CC14CC /* Assets.xcassets */,
-				04AAE05A217D986F00CC14CC /* LaunchScreen.storyboard */,
-				04AAE05D217D986F00CC14CC /* Info.plist */,
-				04AAE05E217D986F00CC14CC /* main.m */,
+				04B97BD6217F5EB500AD7C42 /* Classes */,
+				04B97BD5217F5E7C00AD7C42 /* Support */,
 			);
 			path = FSNetwork;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 				04AAE06E217E0F7D00CC14CC /* Base */,
 				04AAE075217E114300CC14CC /* FSController01.h */,
 				04AAE076217E114300CC14CC /* FSController01.m */,
+				04AAE080217EF87C00CC14CC /* Controller02 */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,6 +117,79 @@
 				04AAE073217E0FE100CC14CC /* FSMainVC.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		04AAE07B217EEA9F00CC14CC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				04AAE07F217EECA200CC14CC /* Network */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		04AAE07F217EECA200CC14CC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				04AAE07C217EEC3100CC14CC /* FSDownloadTaskDownloader.h */,
+				04AAE07D217EEC3100CC14CC /* FSDownloadTaskDownloader.m */,
+				04AAE084217F17EB00CC14CC /* FSDataTaskDownloader.h */,
+				04AAE085217F17EB00CC14CC /* FSDataTaskDownloader.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		04AAE080217EF87C00CC14CC /* Controller02 */ = {
+			isa = PBXGroup;
+			children = (
+				04AAE081217EF89500CC14CC /* FSController02.h */,
+				04AAE082217EF89500CC14CC /* FSController02.m */,
+				04B97BD1217F5C6100AD7C42 /* FSController02Cell.h */,
+				04B97BD2217F5C6100AD7C42 /* FSController02Cell.m */,
+			);
+			path = Controller02;
+			sourceTree = "<group>";
+		};
+		04B97BD4217F5E6B00AD7C42 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				04AAE04F217D986D00CC14CC /* AppDelegate.h */,
+				04AAE050217D986D00CC14CC /* AppDelegate.m */,
+				04AAE052217D986D00CC14CC /* ViewController.h */,
+				04AAE053217D986D00CC14CC /* ViewController.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		04B97BD5217F5E7C00AD7C42 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				04AAE058217D986F00CC14CC /* Assets.xcassets */,
+				04AAE05D217D986F00CC14CC /* Info.plist */,
+				04AAE05A217D986F00CC14CC /* LaunchScreen.storyboard */,
+				04AAE05E217D986F00CC14CC /* main.m */,
+				04B97BDC217F5F4A00AD7C42 /* PrefixHeader.pch */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		04B97BD6217F5EB500AD7C42 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04B97BD7217F5EDC00AD7C42 /* Catrgory */,
+				04AAE06D217E0F7D00CC14CC /* Controllers */,
+				04B97BD4217F5E6B00AD7C42 /* Other */,
+				04AAE07B217EEA9F00CC14CC /* Util */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04B97BD7217F5EDC00AD7C42 /* Catrgory */ = {
+			isa = PBXGroup;
+			children = (
+				04B97BD9217F5F1A00AD7C42 /* UIView+Frame.h */,
+				04B97BD8217F5F1A00AD7C42 /* UIView+Frame.m */,
+			);
+			path = Catrgory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,10 +263,15 @@
 			files = (
 				04AAE071217E0F7D00CC14CC /* FSBaseViewController.m in Sources */,
 				04AAE077217E114300CC14CC /* FSController01.m in Sources */,
+				04AAE083217EF89500CC14CC /* FSController02.m in Sources */,
 				04AAE054217D986D00CC14CC /* ViewController.m in Sources */,
+				04B97BD3217F5C6200AD7C42 /* FSController02Cell.m in Sources */,
 				04AAE074217E0FE100CC14CC /* FSMainVC.m in Sources */,
+				04AAE07E217EEC3100CC14CC /* FSDownloadTaskDownloader.m in Sources */,
+				04AAE086217F17EB00CC14CC /* FSDataTaskDownloader.m in Sources */,
 				04AAE05F217D986F00CC14CC /* main.m in Sources */,
 				04AAE051217D986D00CC14CC /* AppDelegate.m in Sources */,
+				04B97BDA217F5F1A00AD7C42 /* UIView+Frame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +403,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = U72R3QQ45L;
+				GCC_PREFIX_HEADER = FSNetwork/PrefixHeader.pch;
 				INFOPLIST_FILE = FSNetwork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -326,6 +414,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FSNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "05e4eb12-d57a-4830-9259-37b5dce1d277";
+				PROVISIONING_PROFILE_SPECIFIER = "FastMap Team";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -334,7 +424,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = FSNetwork/PrefixHeader.pch;
 				INFOPLIST_FILE = FSNetwork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -343,6 +435,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FSNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
