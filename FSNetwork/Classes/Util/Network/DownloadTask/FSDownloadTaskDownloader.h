@@ -31,4 +31,6 @@
 
 - (void)resume;
 
+- (void)invalidateAndCancel;
+
 @end

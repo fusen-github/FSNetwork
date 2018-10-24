@@ -1,31 +1,28 @@
 //
-//  FSController02.m
+//  FSController03.m
 //  FSNetwork
 //
-//  Created by 付森 on 2018/10/23.
+//  Created by 付森 on 2018/10/24.
 //  Copyright © 2018年 付森. All rights reserved.
 //
 
-#import "FSController02.h"
+#import "FSController03.h"
 #import "FSDownloadTaskDownloader.h"
-#import "FSDataTaskDownloader.h"
 #import "FSTaskCell.h"
+#import "AppDelegate.h"
 
-/*
- FSDataTaskDownloader实现下载
- */
 
-@interface FSController02 ()<UITableViewDelegate,UITableViewDataSource,FSDataTaskDownloaderDelegate>
+@interface FSController03 ()<UITableViewDelegate,UITableViewDataSource,FSDownloadTaskDownloaderDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *dataArray;
 
-@property (nonatomic, weak) FSDownloadTaskDownloader *dTask;
+@property (nonatomic, strong) FSDownloadTaskDownloader *downloader;
 
 @end
 
-@implementation FSController02
+@implementation FSController03
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,6 +48,15 @@
 
 - (void)rightAction
 {
+    [self.downloader invalidateAndCancel];
+}
+
+- (void)rightAction_01
+{
+    AppDelegate *app = (id)[UIApplication sharedApplication].delegate;
+
+    app.loader = self.downloader;
+    
     NSMutableArray *array = [NSMutableArray array];
     
     id obj = nil;
@@ -58,6 +64,8 @@
     [array addObject:obj];
     
     NSLog(@"还能来吗");
+    
+//    [self.downloader invalidateAndCancel];
 }
 
 - (void)viewWillLayoutSubviews
@@ -104,7 +112,7 @@
     
     NSString *targetPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     
-    targetPath = [targetPath stringByAppendingPathComponent:@"dmgs/dataTask"];
+    targetPath = [targetPath stringByAppendingPathComponent:@"dmgs/downloadTast"];
     
     BOOL isDir = NO;
     
@@ -117,52 +125,16 @@
     
     targetPath = [targetPath stringByAppendingPathComponent:url.lastPathComponent];
     
-    [self useDataTaskDownloaderWithTargetPath:targetPath url:url];
+    [self useDownloadTaskDownloaderWithTargetPath:targetPath url:url];
 }
 
-
-
-- (void)useDataTaskDownloaderWithTargetPath:(NSString *)targetPath url:(NSURL *)url
+- (void)useDownloadTaskDownloaderWithTargetPath:(NSString *)targetPath url:(NSURL *)url
 {
-    FSDataTaskDownloader *downloader = [FSDataTaskDownloader downloaderWithURL:url targetPath:targetPath delegate:self];
+    FSDownloadTaskDownloader *downloader = [FSDownloadTaskDownloader downloaderWithURL:url targetPath:targetPath delegate:self];
+    
+    self.downloader = downloader;
     
     [downloader resume];
-}
-
-
-- (void)downloaderDidFinished:(FSDataTaskDownloader *)downloader
-{
-    NSLog(@"%s",__func__);
-    
-    [downloader invalidateAndCancel];
-}
-
-
-- (void)downloader:(FSDataTaskDownloader *)downloader didError:(NSError *)error
-{
-    NSLog(@"didError:%@",error.localizedDescription);
-    
-    [downloader invalidateAndCancel];
-}
-
-- (void)downloader:(FSDataTaskDownloader *)downloader downloadProgress:(float)progress
-{
-    NSLog(@"progress: %f",progress);
-    
-    NSInteger row = [self.dataArray indexOfObject:downloader.url.absoluteString];
-    
-    if (row < 0 || row >= self.dataArray.count)
-    {
-        NSLog(@"index error");
-        
-        return;
-    }
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-    
-    FSTaskCell *cell = (id)[self.tableView cellForRowAtIndexPath:indexPath];
-    
-    [cell updateProgress:progress];
 }
 
 @end

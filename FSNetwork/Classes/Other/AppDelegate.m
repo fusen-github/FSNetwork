@@ -16,6 +16,20 @@
 
 @implementation AppDelegate
 
+void UncaughtExceptionHandler(NSException *exception)
+{
+    NSLog(@"捕捉到异常");
+    
+    AppDelegate *app = (id)[UIApplication sharedApplication].delegate;
+    
+    [app.loader invalidateAndCancel];
+    
+    NSLog(@"end: %@",[NSThread currentThread]);
+    
+    [NSThread sleepForTimeInterval:2];
+    
+    NSLog(@"real 崩溃了");
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -29,8 +43,11 @@
     
     [self.window makeKeyAndVisible];
     
+    NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
+    
     return YES;
 }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -55,8 +72,12 @@
 }
 
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+- (void)applicationWillTerminate:(UIApplication *)application
+{
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    NSLog(@"fs_applicationWillTerminate");
+    
 }
 
 

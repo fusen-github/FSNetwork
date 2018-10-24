@@ -38,7 +38,8 @@ static NSString * const kControllerKey = @"controller";
     [self.view addSubview:tableView];
     
     self.dataArray = @[@{kTitleKey:@"初识网络",kControllerKey:@"FSController01"},
-                       @{kTitleKey:@"下载",kControllerKey:@"FSController02"},];
+                       @{kTitleKey:@"NSURLSessionDataTask",kControllerKey:@"FSController02"},
+                       @{kTitleKey:@"NSURLSessionDownloadTask",kControllerKey:@"FSController03"},];
     
 }
 
@@ -94,6 +95,10 @@ static NSString * const kControllerKey = @"controller";
     if ([cls isSubclassOfClass:[FSBaseViewController class]])
     {
         FSBaseViewController *controller = [[cls alloc] init];
+        
+        NSString *title = [dict objectForKey:kTitleKey];
+        
+        controller.title = title;
         
         [self.navigationController pushViewController:controller animated:YES];
     }

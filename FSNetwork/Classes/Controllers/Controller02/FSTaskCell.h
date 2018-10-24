@@ -1,5 +1,5 @@
 //
-//  FSController02Cell.h
+//  FSTaskCell.h
 //  FSNetwork
 //
 //  Created by 付森 on 2018/10/23.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSController02Cell : UITableViewCell
+@interface FSTaskCell : UITableViewCell
 
 - (void)updateProgress:(float)progress;
 

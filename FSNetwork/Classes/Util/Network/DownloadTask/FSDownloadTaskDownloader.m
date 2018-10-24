@@ -8,21 +8,13 @@
 
 #import "FSDownloadTaskDownloader.h"
 
-@interface FSDownloadTaskDownloader ()<NSURLSessionDelegate>
+@interface FSDownloadTaskDownloader ()<NSURLSessionDelegate,NSURLSessionDownloadDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 
-/**
- 已经接收到的文件大小 单位：bytes
- */
-@property (nonatomic, assign) unsigned long long receivedContentLength;
+@property (nonatomic, strong) NSURLSessionDownloadTask *downloadTask;
 
-/**
- 服务器端总文件大小 单位：bytes
- */
-@property (nonatomic, assign) unsigned long long totalContentLength;
-
-@property (nonatomic, strong) NSFileHandle *fileHandle;
+@property (nonatomic, assign) int64_t didRecivedBytes;
 
 @end
 
@@ -66,44 +58,92 @@
     
     self.session = session;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.url];
+    NSData *resumeData = [self resumeDataAtPath:self.targetPath];
     
-    self.receivedContentLength = [self fileSizeAtPath:self.targetPath];
+    NSURLSessionDownloadTask *downloadTask = nil;
     
-    if (self.receivedContentLength > 0)
+    if (resumeData.length > 0)
     {
-        NSString *offset = [NSString stringWithFormat:@"bytes=%llu",self.receivedContentLength];
-        
-        [request setValue:offset forHTTPHeaderField:@"Range"];
+        downloadTask = [session downloadTaskWithResumeData:resumeData];
     }
     else
     {
-//        NSFileManager *manager = [NSFileManager defaultManager];
-//
-//        [manager removeItemAtPath:self.targetPath error:nil];
-        
-        NSLog(@"文件不存在，或者文件大小为0");
+        downloadTask = [session downloadTaskWithURL:self.url];
     }
     
-    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request];
+    self.downloadTask = downloadTask;
     
     [downloadTask resume];
 }
 
-- (void)cancel
+/*
+ resumeData的本质是一个xml文件，记录着下载的相关信息。转成二进制NSData后，返回给用户
+ */
+
+- (void)invalidateAndCancel
 {
-    if (self.session)
-    {
-        [self.session invalidateAndCancel];
+    NSLog(@"fs_invalidateAndCancel");
+    
+    /*
+     resumeData的本质是一个.plist文件转成的NSData对象。记录着下载的相关信息
+     转成字典后的样式:
+     {
+        NSURLSessionDownloadURL = "http://dl_dir.qq.com/invc/tt/QQBrowser_1.5.0.2311.dmg";
+        NSURLSessionResumeBytesReceived = 4336344;
+        NSURLSessionResumeCurrentRequest = <data_fs1>;
+        NSURLSessionResumeInfoTempFileName = "CFNetworkDownload_TWYDm3.tmp";
+        NSURLSessionResumeInfoVersion = 4;
+        NSURLSessionResumeOriginalRequest = <data_fs2>;
+        NSURLSessionResumeServerDownloadDate = "Wed, 11 Jul 2012 07:42:38 GMT";
+     }
+     */
+    
+    [self.downloadTask cancelByProducingResumeData:^(NSData * _Nullable resumeData) {
+       
         
-        self.session = nil;
+        
+//        NSString *path = [self.targetPath stringByDeletingPathExtension];
+//
+//        path = [path stringByAppendingString:@"_resumeData.plist"];
+//
+//        BOOL rst = [resumeData writeToFile:path atomically:YES];
+//
+//        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+//
+//        NSLog(@"%@",dict);
+//
+//        NSString *string = [[NSString alloc] initWithData:resumeData encoding:NSUTF8StringEncoding];
+//
+//        NSLog(@"%@",string);
+    }];
+}
+
+
+/* The last message a session receives.  A session will only become
+ * invalid because of a systemic error or when it has been
+ * explicitly invalidated, in which case the error parameter will be nil.
+ */
+//- (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(nullable NSError *)error
+//{
+//    NSLog(@"%s",__func__);
+//
+//    NSLog(@"error1:%@",error);
+//}
+
+
+/* Sent as the last message related to a specific task.  Error may be
+ * nil, which implies that no error occurred and this task is complete.
+ */
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error
+{
+    NSLog(@"fs_didCompleteWithError:%@",[NSThread currentThread]);
+    
+    if (error && error.code == NSURLErrorCancelled && error.userInfo.count)
+    {
+        
     }
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error
-{
-    NSLog(@"%s",__func__);
-}
 
 /* Sent when a download task that has completed a download.  The delegate should
  * copy or move the file at the given location to a new location as it will be
@@ -121,24 +161,9 @@
  totalBytesWritten:(int64_t)totalBytesWritten
 totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
-    NSLog(@"%s",__func__);
+    self.didRecivedBytes += bytesWritten;
     
-    NSData *data = nil;
-    
-    NSFileHandle *fileHandle = self.fileHandle;
-    
-    if (fileHandle == nil)
-    {
-        fileHandle = [NSFileHandle fileHandleForWritingAtPath:self.targetPath];
-        
-        self.fileHandle = fileHandle;
-    }
-    
-    [fileHandle seekToEndOfFile];
-    
-//    [fileHandle ]
-    
-//    NSStream
+    NSLog(@"下载了: %lld",self.didRecivedBytes);
 }
 
 
@@ -152,30 +177,19 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 expectedTotalBytes:(int64_t)expectedTotalBytes
 {
     NSLog(@"%s",__func__);
-    
-//    [downloadTask cancelByProducingResumeData:^(NSData * _Nullable resumeData) {
-//        <#code#>
-//    }]
 }
 
 
-- (unsigned long long)fileSizeAtPath:(NSString *)path
+- (NSData *)resumeDataAtPath:(NSString *)path
 {
-    unsigned long long fileSize = 0;
+    NSData *data = nil;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:path])
     {
-        NSError *error = nil;
-        
-        NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
-        
-        if (dict && error == nil)
-        {
-            fileSize = [dict fileSize];
-        }
+        data = [NSData dataWithContentsOfFile:path];
     }
     
-    return fileSize;
+    return data;
 }
 
 - (void)dealloc
