@@ -35,18 +35,27 @@
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:queue];
     
-    NSURL *url = [NSURL URLWithString:@"http://t.weather.sojson.com/api/weather/city/101030100_fs"];
+    /* 拼接服务器地址 */
+    NSString *urlString = [kBaseUrl stringByAppendingPathComponent:@"path1/demo"];
+    
+    /* 模拟一个不存在的资源路径 */
+//    urlString = @"http://t.weather.sojson.com/api/weather/city/101030100_fs";
+
+//    urlString = @"http://t.weather.sojson.com/api/weather/city/101030100";
+    
+    NSURL *url = [NSURL URLWithString:urlString];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
+        NSLog(@"%@",request.allHTTPHeaderFields);
+        
         id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
         NSLog(@"%@",json);
         
-        NSLog(@"%@",[NSThread currentThread]);
-        
+        NSLog(@"回调线程: %@",[NSThread currentThread]);
     }];
     
     NSLog(@"%@",[NSThread currentThread]);

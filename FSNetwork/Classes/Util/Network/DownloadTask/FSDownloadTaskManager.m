@@ -17,9 +17,27 @@
 
 @property (nonatomic, strong) NSURLSession *session;
 
+@property (nonatomic, strong) NSOperationQueue *taskQueue;
+
+/* 监听者容器 */
+@property (nonatomic, strong) NSHashTable *listenerContainer;
+
 @end
 
 @implementation FSDownloadTaskManager
+
+- (NSHashTable *)listenerContainer
+{
+    @synchronized (self)
+    {
+        if (_listenerContainer == nil)
+        {
+            _listenerContainer = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsWeakMemory capacity:0];
+        }
+    }
+    
+    return _listenerContainer;
+}
 
 + (instancetype)shareInstance
 {
@@ -38,20 +56,35 @@
 {
     if (self = [super init])
     {
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         
-        configuration.timeoutIntervalForRequest = 20;
-        
-        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-        
-        queue.maxConcurrentOperationCount = 5;
-        
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:queue];
-        
-        self.session = session;
     }
     return self;
 }
 
+- (void)resumeItem:(FSDownloadTaskItem *)item
+{
+    
+}
+
+
+- (void)addListener:(id<FSDownloadTaskManagerDelegate>)listener
+{
+    @synchronized (self)
+    {
+        if (listener == nil) return;
+        
+        [self.listenerContainer addObject:listener];
+    }
+}
+
+- (void)removeListener:(id<FSDownloadTaskManagerDelegate>)listener
+{
+    @synchronized (self)
+    {
+        if (listener == nil) return;
+        
+        [self.listenerContainer removeObject:listener];
+    }
+}
 
 @end

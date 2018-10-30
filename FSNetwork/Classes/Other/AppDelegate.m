@@ -80,5 +80,10 @@ void UncaughtExceptionHandler(NSException *exception)
     
 }
 
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(nonnull NSString *)identifier completionHandler:(nonnull void (^)(void))completionHandler
+{
+    
+}
+
 
 @end
