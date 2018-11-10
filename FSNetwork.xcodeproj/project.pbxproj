@@ -26,6 +26,18 @@
 		04B97C5321806C2900AD7C42 /* FSDownloadTaskItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B97C5221806C2900AD7C42 /* FSDownloadTaskItem.m */; };
 		04B97C5621806EDD00AD7C42 /* FSDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B97C5521806EDD00AD7C42 /* FSDownloadOperation.m */; };
 		04C7E0282188554200009F87 /* FSConstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C7E0272188554200009F87 /* FSConstance.m */; };
+		04E61B6C219556FB00FF1DED /* FSController04.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B6B219556FB00FF1DED /* FSController04.m */; };
+		04E61B6F21955B0A00FF1DED /* FSDataTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B6E21955B0A00FF1DED /* FSDataTaskManager.m */; };
+		04E61B7221955C4000FF1DED /* FSDataTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B7121955C4000FF1DED /* FSDataTaskOperation.m */; };
+		04E61B76219567EE00FF1DED /* FSController05.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B75219567EE00FF1DED /* FSController05.m */; };
+		04E61B7A2195685400FF1DED /* FSFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B792195685400FF1DED /* FSFileItem.m */; };
+		04E61B7D2195697A00FF1DED /* FSCell05.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B7C2195697A00FF1DED /* FSCell05.m */; };
+		04E61B8021956A4700FF1DED /* FSTaskListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B7F21956A4700FF1DED /* FSTaskListController.m */; };
+		04E61B8321956A5700FF1DED /* FSDownloadListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B8221956A5700FF1DED /* FSDownloadListController.m */; };
+		04E61B862195769B00FF1DED /* FSFileDownloadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B852195769B00FF1DED /* FSFileDownloadTool.m */; };
+		04E61B89219580A900FF1DED /* FSTaskListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B88219580A900FF1DED /* FSTaskListCell.m */; };
+		04E61B8C219580C700FF1DED /* FSDownloadListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B8B219580C700FF1DED /* FSDownloadListCell.m */; };
+		04E61B8F2196CB7F00FF1DED /* FSDataTaskConstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B8E2196CB7F00FF1DED /* FSDataTaskConstance.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +80,31 @@
 		04B97C5521806EDD00AD7C42 /* FSDownloadOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDownloadOperation.m; sourceTree = "<group>"; };
 		04C7E0262188554200009F87 /* FSConstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSConstance.h; sourceTree = "<group>"; };
 		04C7E0272188554200009F87 /* FSConstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSConstance.m; sourceTree = "<group>"; };
+		04E61B6A219556FB00FF1DED /* FSController04.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSController04.h; sourceTree = "<group>"; };
+		04E61B6B219556FB00FF1DED /* FSController04.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSController04.m; sourceTree = "<group>"; };
+		04E61B6D21955B0A00FF1DED /* FSDataTaskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDataTaskManager.h; sourceTree = "<group>"; };
+		04E61B6E21955B0A00FF1DED /* FSDataTaskManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDataTaskManager.m; sourceTree = "<group>"; };
+		04E61B7021955C4000FF1DED /* FSDataTaskOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDataTaskOperation.h; sourceTree = "<group>"; };
+		04E61B7121955C4000FF1DED /* FSDataTaskOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDataTaskOperation.m; sourceTree = "<group>"; };
+		04E61B7321955D7200FF1DED /* FSDataTaskItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDataTaskItem.h; sourceTree = "<group>"; };
+		04E61B74219567EE00FF1DED /* FSController05.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSController05.h; sourceTree = "<group>"; };
+		04E61B75219567EE00FF1DED /* FSController05.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSController05.m; sourceTree = "<group>"; };
+		04E61B782195685400FF1DED /* FSFileItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSFileItem.h; sourceTree = "<group>"; };
+		04E61B792195685400FF1DED /* FSFileItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSFileItem.m; sourceTree = "<group>"; };
+		04E61B7B2195697A00FF1DED /* FSCell05.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCell05.h; sourceTree = "<group>"; };
+		04E61B7C2195697A00FF1DED /* FSCell05.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSCell05.m; sourceTree = "<group>"; };
+		04E61B7E21956A4700FF1DED /* FSTaskListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSTaskListController.h; sourceTree = "<group>"; };
+		04E61B7F21956A4700FF1DED /* FSTaskListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSTaskListController.m; sourceTree = "<group>"; };
+		04E61B8121956A5700FF1DED /* FSDownloadListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDownloadListController.h; sourceTree = "<group>"; };
+		04E61B8221956A5700FF1DED /* FSDownloadListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDownloadListController.m; sourceTree = "<group>"; };
+		04E61B842195769B00FF1DED /* FSFileDownloadTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSFileDownloadTool.h; sourceTree = "<group>"; };
+		04E61B852195769B00FF1DED /* FSFileDownloadTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSFileDownloadTool.m; sourceTree = "<group>"; };
+		04E61B87219580A900FF1DED /* FSTaskListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSTaskListCell.h; sourceTree = "<group>"; };
+		04E61B88219580A900FF1DED /* FSTaskListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSTaskListCell.m; sourceTree = "<group>"; };
+		04E61B8A219580C700FF1DED /* FSDownloadListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDownloadListCell.h; sourceTree = "<group>"; };
+		04E61B8B219580C700FF1DED /* FSDownloadListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDownloadListCell.m; sourceTree = "<group>"; };
+		04E61B8D2196CB7F00FF1DED /* FSDataTaskConstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDataTaskConstance.h; sourceTree = "<group>"; };
+		04E61B8E2196CB7F00FF1DED /* FSDataTaskConstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDataTaskConstance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +161,9 @@
 				04AAE080217EF87C00CC14CC /* FSController02 */,
 				04B97BDD2180183600AD7C42 /* FSController03.h */,
 				04B97BDE2180183600AD7C42 /* FSController03.m */,
+				04E61B6A219556FB00FF1DED /* FSController04.h */,
+				04E61B6B219556FB00FF1DED /* FSController04.m */,
+				04E61B77219567F400FF1DED /* FSController05 */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,9 +193,8 @@
 		04AAE07F217EECA200CC14CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				04E61B692195566500FF1DED /* DataTask */,
 				04B97BE021801DD100AD7C42 /* DownloadTask */,
-				04AAE084217F17EB00CC14CC /* FSDataTaskDownloader.h */,
-				04AAE085217F17EB00CC14CC /* FSDataTaskDownloader.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -238,6 +277,45 @@
 			path = XMLDictionary;
 			sourceTree = "<group>";
 		};
+		04E61B692195566500FF1DED /* DataTask */ = {
+			isa = PBXGroup;
+			children = (
+				04AAE084217F17EB00CC14CC /* FSDataTaskDownloader.h */,
+				04AAE085217F17EB00CC14CC /* FSDataTaskDownloader.m */,
+				04E61B6D21955B0A00FF1DED /* FSDataTaskManager.h */,
+				04E61B6E21955B0A00FF1DED /* FSDataTaskManager.m */,
+				04E61B7321955D7200FF1DED /* FSDataTaskItem.h */,
+				04E61B7021955C4000FF1DED /* FSDataTaskOperation.h */,
+				04E61B7121955C4000FF1DED /* FSDataTaskOperation.m */,
+				04E61B8D2196CB7F00FF1DED /* FSDataTaskConstance.h */,
+				04E61B8E2196CB7F00FF1DED /* FSDataTaskConstance.m */,
+			);
+			path = DataTask;
+			sourceTree = "<group>";
+		};
+		04E61B77219567F400FF1DED /* FSController05 */ = {
+			isa = PBXGroup;
+			children = (
+				04E61B74219567EE00FF1DED /* FSController05.h */,
+				04E61B75219567EE00FF1DED /* FSController05.m */,
+				04E61B7E21956A4700FF1DED /* FSTaskListController.h */,
+				04E61B7F21956A4700FF1DED /* FSTaskListController.m */,
+				04E61B8121956A5700FF1DED /* FSDownloadListController.h */,
+				04E61B8221956A5700FF1DED /* FSDownloadListController.m */,
+				04E61B87219580A900FF1DED /* FSTaskListCell.h */,
+				04E61B88219580A900FF1DED /* FSTaskListCell.m */,
+				04E61B8A219580C700FF1DED /* FSDownloadListCell.h */,
+				04E61B8B219580C700FF1DED /* FSDownloadListCell.m */,
+				04E61B7B2195697A00FF1DED /* FSCell05.h */,
+				04E61B7C2195697A00FF1DED /* FSCell05.m */,
+				04E61B782195685400FF1DED /* FSFileItem.h */,
+				04E61B792195685400FF1DED /* FSFileItem.m */,
+				04E61B842195769B00FF1DED /* FSFileDownloadTool.h */,
+				04E61B852195769B00FF1DED /* FSFileDownloadTool.m */,
+			);
+			path = FSController05;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,18 +386,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				04AAE071217E0F7D00CC14CC /* FSBaseViewController.m in Sources */,
+				04E61B7A2195685400FF1DED /* FSFileItem.m in Sources */,
 				04AAE077217E114300CC14CC /* FSController01.m in Sources */,
 				04B97C5621806EDD00AD7C42 /* FSDownloadOperation.m in Sources */,
 				04B97C5321806C2900AD7C42 /* FSDownloadTaskItem.m in Sources */,
 				04B97BE321801DF600AD7C42 /* FSDownloadTaskManager.m in Sources */,
+				04E61B862195769B00FF1DED /* FSFileDownloadTool.m in Sources */,
 				04B97BEA218048A200AD7C42 /* XMLDictionary.m in Sources */,
+				04E61B8C219580C700FF1DED /* FSDownloadListCell.m in Sources */,
+				04E61B8321956A5700FF1DED /* FSDownloadListController.m in Sources */,
 				04AAE083217EF89500CC14CC /* FSController02.m in Sources */,
+				04E61B7D2195697A00FF1DED /* FSCell05.m in Sources */,
+				04E61B89219580A900FF1DED /* FSTaskListCell.m in Sources */,
+				04E61B6F21955B0A00FF1DED /* FSDataTaskManager.m in Sources */,
 				04AAE054217D986D00CC14CC /* ViewController.m in Sources */,
 				04B97BD3217F5C6200AD7C42 /* FSTaskCell.m in Sources */,
 				04C7E0282188554200009F87 /* FSConstance.m in Sources */,
+				04E61B8021956A4700FF1DED /* FSTaskListController.m in Sources */,
+				04E61B6C219556FB00FF1DED /* FSController04.m in Sources */,
+				04E61B8F2196CB7F00FF1DED /* FSDataTaskConstance.m in Sources */,
+				04E61B76219567EE00FF1DED /* FSController05.m in Sources */,
 				04AAE074217E0FE100CC14CC /* FSMainVC.m in Sources */,
 				04AAE07E217EEC3100CC14CC /* FSDownloadTaskDownloader.m in Sources */,
 				04AAE086217F17EB00CC14CC /* FSDataTaskDownloader.m in Sources */,
+				04E61B7221955C4000FF1DED /* FSDataTaskOperation.m in Sources */,
 				04AAE05F217D986F00CC14CC /* main.m in Sources */,
 				04AAE051217D986D00CC14CC /* AppDelegate.m in Sources */,
 				04B97BDA217F5F1A00AD7C42 /* UIView+Frame.m in Sources */,

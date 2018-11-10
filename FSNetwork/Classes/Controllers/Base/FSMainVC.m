@@ -39,7 +39,9 @@ static NSString * const kControllerKey = @"controller";
     
     self.dataArray = @[@{kTitleKey:@"初识网络",kControllerKey:@"FSController01"},
                        @{kTitleKey:@"NSURLSessionDataTask",kControllerKey:@"FSController02"},
-                       @{kTitleKey:@"NSURLSessionDownloadTask",kControllerKey:@"FSController03"},];
+                       @{kTitleKey:@"NSURLSessionDownloadTask",kControllerKey:@"FSController03"},
+                       @{kTitleKey:@"测试",kControllerKey:@"FSController04"},
+                       @{kTitleKey:@"多文件下载",kControllerKey:@"FSController05"},];
     
 }
 
@@ -48,6 +50,21 @@ static NSString * const kControllerKey = @"controller";
     [super viewWillLayoutSubviews];
     
     self.tableView.frame = self.view.bounds;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+       
+        NSLog(@"开启子线程");
+        
+        
+        
+        NSLog(@"123");
+        
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

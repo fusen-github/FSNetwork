@@ -44,6 +44,8 @@
     /// 42110484 字节
     self.dataArray = @[@"http://dl_dir.qq.com/invc/tt/QQBrowser_1.5.0.2311.dmg"];
     
+    
+    
 }
 
 - (void)rightAction

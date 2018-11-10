@@ -51,9 +51,12 @@
         
         NSLog(@"%@",request.allHTTPHeaderFields);
         
-        id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        
-        NSLog(@"%@",json);
+        if (data && error == nil)
+        {
+            id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            
+            NSLog(@"%@",json);
+        }
         
         NSLog(@"回调线程: %@",[NSThread currentThread]);
     }];

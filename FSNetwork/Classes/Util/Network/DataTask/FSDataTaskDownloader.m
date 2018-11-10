@@ -7,6 +7,9 @@
 //
 
 #import "FSDataTaskDownloader.h"
+#import "FSDataTaskConstance.h"
+
+static NSString * const kFSDataTaskDomain = @"com.FSDataTaskDownloader.domain";
 
 @interface FSDataTaskDownloader ()<NSURLSessionDelegate>
 
@@ -212,9 +215,15 @@
         
         if (!flag)
         {
-            NSError *error = [NSError errorWithDomain:[self.url absoluteString]
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:tmpResponse.allHeaderFields];
+            
+            [dict setObject:self.targetPath forKey:FSDataTaskDownloadTargetPathKey];
+            
+            [dict setObject:self.url forKey:FSDataTaskDownloadURLKey];
+            
+            NSError *error = [NSError errorWithDomain:kFSDataTaskDomain
                                                  code:statusCode
-                                             userInfo:tmpResponse.allHeaderFields];
+                                             userInfo:dict];
             
             [self downloadErrorOnMainThread:error];
         }

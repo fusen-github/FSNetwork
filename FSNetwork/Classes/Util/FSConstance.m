@@ -8,4 +8,4 @@
 
 #import "FSConstance.h"
 
-NSString * const kBaseUrl = @"http://172.21.5.125";
+NSString * const kBaseUrl = @"http://192.168.0.101";
