@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0404810721997F9C00CD251D /* FSDLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404810621997F9C00CD251D /* FSDLManager.m */; };
+		0404810A219980B700CD251D /* FSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04048109219980B700CD251D /* FSOperation.m */; };
+		0404811A2199864300CD251D /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 040481102199864300CD251D /* AFURLResponseSerialization.m */; };
+		0404811B2199864300CD251D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 040481112199864300CD251D /* AFHTTPSessionManager.m */; };
+		0404811C2199864300CD251D /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 040481132199864300CD251D /* AFURLSessionManager.m */; };
+		0404811D2199864300CD251D /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 040481142199864300CD251D /* AFURLRequestSerialization.m */; };
+		0404811E2199864300CD251D /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 040481162199864300CD251D /* AFNetworkReachabilityManager.m */; };
+		0404811F2199864300CD251D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 040481172199864300CD251D /* AFSecurityPolicy.m */; };
+		040481222199B2BA00CD251D /* FSDataTaskDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 040481212199B2BA00CD251D /* FSDataTaskDelegate.m */; };
 		04AAE051217D986D00CC14CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE050217D986D00CC14CC /* AppDelegate.m */; };
 		04AAE054217D986D00CC14CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AAE053217D986D00CC14CC /* ViewController.m */; };
 		04AAE059217D986F00CC14CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE058217D986F00CC14CC /* Assets.xcassets */; };
@@ -38,9 +47,31 @@
 		04E61B89219580A900FF1DED /* FSTaskListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B88219580A900FF1DED /* FSTaskListCell.m */; };
 		04E61B8C219580C700FF1DED /* FSDownloadListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B8B219580C700FF1DED /* FSDownloadListCell.m */; };
 		04E61B8F2196CB7F00FF1DED /* FSDataTaskConstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B8E2196CB7F00FF1DED /* FSDataTaskConstance.m */; };
+		04E61B942196EC6500FF1DED /* FSController06.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E61B932196EC6500FF1DED /* FSController06.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0404810521997F9C00CD251D /* FSDLManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDLManager.h; sourceTree = "<group>"; };
+		0404810621997F9C00CD251D /* FSDLManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDLManager.m; sourceTree = "<group>"; };
+		04048108219980B700CD251D /* FSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSOperation.h; sourceTree = "<group>"; };
+		04048109219980B700CD251D /* FSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSOperation.m; sourceTree = "<group>"; };
+		0404810C2199864300CD251D /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		0404810D2199864300CD251D /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		0404810E2199864300CD251D /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		0404810F2199864300CD251D /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		040481102199864300CD251D /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		040481112199864300CD251D /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		040481122199864300CD251D /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		040481132199864300CD251D /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		040481142199864300CD251D /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		040481152199864300CD251D /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		040481162199864300CD251D /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		040481172199864300CD251D /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		040481182199864300CD251D /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
+		040481192199864300CD251D /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		040481202199B2BA00CD251D /* FSDataTaskDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDataTaskDelegate.h; sourceTree = "<group>"; };
+		040481212199B2BA00CD251D /* FSDataTaskDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDataTaskDelegate.m; sourceTree = "<group>"; };
+		040481272199C78400CD251D /* FSTaskProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTaskProtocol.h; sourceTree = "<group>"; };
 		04AAE04C217D986D00CC14CC /* FSNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04AAE04F217D986D00CC14CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04AAE050217D986D00CC14CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,6 +136,8 @@
 		04E61B8B219580C700FF1DED /* FSDownloadListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDownloadListCell.m; sourceTree = "<group>"; };
 		04E61B8D2196CB7F00FF1DED /* FSDataTaskConstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSDataTaskConstance.h; sourceTree = "<group>"; };
 		04E61B8E2196CB7F00FF1DED /* FSDataTaskConstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSDataTaskConstance.m; sourceTree = "<group>"; };
+		04E61B922196EC6500FF1DED /* FSController06.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSController06.h; sourceTree = "<group>"; };
+		04E61B932196EC6500FF1DED /* FSController06.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSController06.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +151,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0404810B2199864300CD251D /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				040481182199864300CD251D /* AFCompatibilityMacros.h */,
+				040481192199864300CD251D /* AFHTTPSessionManager.h */,
+				040481112199864300CD251D /* AFHTTPSessionManager.m */,
+				040481152199864300CD251D /* AFNetworking.h */,
+				0404810D2199864300CD251D /* AFNetworkReachabilityManager.h */,
+				040481162199864300CD251D /* AFNetworkReachabilityManager.m */,
+				0404810C2199864300CD251D /* AFSecurityPolicy.h */,
+				040481172199864300CD251D /* AFSecurityPolicy.m */,
+				0404810F2199864300CD251D /* AFURLRequestSerialization.h */,
+				040481142199864300CD251D /* AFURLRequestSerialization.m */,
+				040481122199864300CD251D /* AFURLResponseSerialization.h */,
+				040481102199864300CD251D /* AFURLResponseSerialization.m */,
+				0404810E2199864300CD251D /* AFURLSessionManager.h */,
+				040481132199864300CD251D /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
 		04AAE043217D986D00CC14CC = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +217,7 @@
 				04B97BDE2180183600AD7C42 /* FSController03.m */,
 				04E61B6A219556FB00FF1DED /* FSController04.h */,
 				04E61B6B219556FB00FF1DED /* FSController04.m */,
+				04E61B912196EC4800FF1DED /* FSController06 */,
 				04E61B77219567F400FF1DED /* FSController05 */,
 			);
 			path = Controllers;
@@ -236,6 +291,7 @@
 		04B97BD6217F5EB500AD7C42 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0404810B2199864300CD251D /* AFNetworking */,
 				04B97BD7217F5EDC00AD7C42 /* Catrgory */,
 				04AAE06D217E0F7D00CC14CC /* Controllers */,
 				04B97BD4217F5E6B00AD7C42 /* Other */,
@@ -316,6 +372,22 @@
 			path = FSController05;
 			sourceTree = "<group>";
 		};
+		04E61B912196EC4800FF1DED /* FSController06 */ = {
+			isa = PBXGroup;
+			children = (
+				04E61B922196EC6500FF1DED /* FSController06.h */,
+				04E61B932196EC6500FF1DED /* FSController06.m */,
+				0404810521997F9C00CD251D /* FSDLManager.h */,
+				0404810621997F9C00CD251D /* FSDLManager.m */,
+				040481202199B2BA00CD251D /* FSDataTaskDelegate.h */,
+				040481212199B2BA00CD251D /* FSDataTaskDelegate.m */,
+				040481272199C78400CD251D /* FSTaskProtocol.h */,
+				04048108219980B700CD251D /* FSOperation.h */,
+				04048109219980B700CD251D /* FSOperation.m */,
+			);
+			path = FSController06;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,28 +461,38 @@
 				04E61B7A2195685400FF1DED /* FSFileItem.m in Sources */,
 				04AAE077217E114300CC14CC /* FSController01.m in Sources */,
 				04B97C5621806EDD00AD7C42 /* FSDownloadOperation.m in Sources */,
+				0404811A2199864300CD251D /* AFURLResponseSerialization.m in Sources */,
 				04B97C5321806C2900AD7C42 /* FSDownloadTaskItem.m in Sources */,
 				04B97BE321801DF600AD7C42 /* FSDownloadTaskManager.m in Sources */,
 				04E61B862195769B00FF1DED /* FSFileDownloadTool.m in Sources */,
+				0404811F2199864300CD251D /* AFSecurityPolicy.m in Sources */,
 				04B97BEA218048A200AD7C42 /* XMLDictionary.m in Sources */,
 				04E61B8C219580C700FF1DED /* FSDownloadListCell.m in Sources */,
+				0404811C2199864300CD251D /* AFURLSessionManager.m in Sources */,
 				04E61B8321956A5700FF1DED /* FSDownloadListController.m in Sources */,
 				04AAE083217EF89500CC14CC /* FSController02.m in Sources */,
 				04E61B7D2195697A00FF1DED /* FSCell05.m in Sources */,
 				04E61B89219580A900FF1DED /* FSTaskListCell.m in Sources */,
 				04E61B6F21955B0A00FF1DED /* FSDataTaskManager.m in Sources */,
+				0404811B2199864300CD251D /* AFHTTPSessionManager.m in Sources */,
 				04AAE054217D986D00CC14CC /* ViewController.m in Sources */,
 				04B97BD3217F5C6200AD7C42 /* FSTaskCell.m in Sources */,
 				04C7E0282188554200009F87 /* FSConstance.m in Sources */,
 				04E61B8021956A4700FF1DED /* FSTaskListController.m in Sources */,
+				040481222199B2BA00CD251D /* FSDataTaskDelegate.m in Sources */,
+				0404810A219980B700CD251D /* FSOperation.m in Sources */,
 				04E61B6C219556FB00FF1DED /* FSController04.m in Sources */,
 				04E61B8F2196CB7F00FF1DED /* FSDataTaskConstance.m in Sources */,
 				04E61B76219567EE00FF1DED /* FSController05.m in Sources */,
 				04AAE074217E0FE100CC14CC /* FSMainVC.m in Sources */,
 				04AAE07E217EEC3100CC14CC /* FSDownloadTaskDownloader.m in Sources */,
+				0404811D2199864300CD251D /* AFURLRequestSerialization.m in Sources */,
 				04AAE086217F17EB00CC14CC /* FSDataTaskDownloader.m in Sources */,
 				04E61B7221955C4000FF1DED /* FSDataTaskOperation.m in Sources */,
+				0404810721997F9C00CD251D /* FSDLManager.m in Sources */,
 				04AAE05F217D986F00CC14CC /* main.m in Sources */,
+				0404811E2199864300CD251D /* AFNetworkReachabilityManager.m in Sources */,
+				04E61B942196EC6500FF1DED /* FSController06.m in Sources */,
 				04AAE051217D986D00CC14CC /* AppDelegate.m in Sources */,
 				04B97BDA217F5F1A00AD7C42 /* UIView+Frame.m in Sources */,
 				04B97BDF2180183600AD7C42 /* FSController03.m in Sources */,

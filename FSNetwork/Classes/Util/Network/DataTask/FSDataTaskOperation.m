@@ -64,10 +64,14 @@
     
     while (self.runFlag)
     {
-        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+//        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
 }
 
+//- (BOOL)isConcurrent
+//{
+//    return YES;
+//}
 
 - (void)cancel
 {

@@ -67,6 +67,8 @@ static NSString * const kFSDataTaskDomain = @"com.FSDataTaskDownloader.domain";
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:queue];
     
+    NSLog(@"ssss: %@",session);
+    
     self.session = session;
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.url];

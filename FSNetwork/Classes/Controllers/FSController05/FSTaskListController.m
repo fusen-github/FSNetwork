@@ -27,6 +27,63 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
+//    [self prepareDataArray_1];
+    
+    [self prepareDataArray_2];
+    
+    UITableView *tableView = [[UITableView alloc] init];
+    
+    self.tableView = tableView;
+    
+    tableView.cellLayoutMarginsFollowReadableWidth = NO;
+    
+    tableView.delegate = self;
+    
+    tableView.dataSource = self;
+    
+    tableView.frame = self.view.bounds;
+    
+    [self.view addSubview:tableView];
+    
+}
+
+- (void)prepareDataArray_2
+{
+    NSArray *array = @[@"http://dldir1.qq.com/qqfile/QQforMac/QQ_V6.5.2.dmg",
+                       @"https://qd.myapp.com/myapp/qqteam/pcqq/QQ9.0.7_1.exe",
+                       @"https://qd.myapp.com/myapp/qqteam/AndroidQQi/qq_6.0.1.6600_android_r25029_GuanWang_537057608_release.apk",
+                       @"https://qd.myapp.com/myapp/qqteam/Androidlite/qqlite_3.7.1.704_android_r110206_GuanWang_537057973_release_10000484.apk",];
+
+    NSString *targetPath = [self targetPath];
+    
+    NSMutableArray *dataArray = [NSMutableArray array];
+    
+    for (NSString *urlString in array)
+    {
+        FSFileItem *item = [[FSFileItem alloc] init];
+        
+        item.title = [urlString lastPathComponent];
+        
+        NSURL *url = [NSURL URLWithString:urlString];
+        
+        item.downloadUrl = url;
+        
+        item.targetPath = [targetPath stringByAppendingPathComponent:[urlString lastPathComponent]];
+        
+        [dataArray addObject:item];
+    }
+    
+    self.dataArray = dataArray;
+    
+    
+}
+
+// http://dldir1.qq.com/qqfile/QQforMac/QQ_V6.5.2.dmg
+// https://qd.myapp.com/myapp/qqteam/pcqq/QQ9.0.7_1.exe
+// https://qd.myapp.com/myapp/qqteam/AndroidQQi/qq_6.0.1.6600_android_r25029_GuanWang_537057608_release.apk
+
+- (void)prepareDataArray_1
+{
     NSArray *array = @[@"1111.zip",@"2222.zip",@"3333.zip",@"4444.zip",
                        @"aaaa.zip",@"bbbb.zip",@"cccc.zip",@"dddd.zip",
                        @"eeee.zip",@"ffff.zip",@"gggg.zip",@"hhhh.zip"];
@@ -53,21 +110,6 @@
     }
     
     self.dataArray = dataArray;
-    
-    UITableView *tableView = [[UITableView alloc] init];
-    
-    self.tableView = tableView;
-    
-    tableView.cellLayoutMarginsFollowReadableWidth = NO;
-    
-    tableView.delegate = self;
-    
-    tableView.dataSource = self;
-    
-    tableView.frame = self.view.bounds;
-    
-    [self.view addSubview:tableView];
-    
 }
 
 - (NSString *)targetPath

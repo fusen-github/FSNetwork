@@ -39,7 +39,7 @@
     {
         _queue = [[NSOperationQueue alloc] init];
         
-        _queue.maxConcurrentOperationCount = 2;
+        _queue.maxConcurrentOperationCount = 5;
     }
     return _queue;
 }
