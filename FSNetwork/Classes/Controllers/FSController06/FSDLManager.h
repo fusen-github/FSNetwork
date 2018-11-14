@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FSDataTaskItem.h"
 
 @interface FSDLManager : NSObject
 
 + (instancetype)shareManager;
 
 - (void)downloadUrl:(NSURL *)url;
+
+- (void)startDownloadWithItem:(id<FSDataTaskItem>)item;
 
 @end

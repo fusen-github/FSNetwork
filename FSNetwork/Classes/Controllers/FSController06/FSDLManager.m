@@ -10,6 +10,13 @@
 #import "FSOperation.h"
 #import "FSDataTaskDelegate.h"
 
+@interface FSDLObject : NSObject
+
+@property (nonatomic, weak) id<FSDataTaskItem> item;
+
+@property (nonatomic, strong) NSURLSessionTask *dataTask;
+
+@end
 
 @interface FSDLManager ()<NSURLSessionDelegate, NSURLSessionDataDelegate>
 
@@ -75,16 +82,6 @@
     
     [request setValue:range forHTTPHeaderField:@"Range"];
     
-    [self.session getTasksWithCompletionHandler:^(NSArray<NSURLSessionDataTask *> *dataTasks, NSArray<NSURLSessionUploadTask *> *uploadTasks, NSArray<NSURLSessionDownloadTask *> *downloadTasks) {
-        
-    }];
-    
-    [self.session getAllTasksWithCompletionHandler:^(NSArray<NSURLSessionTask *> *tasks) {
-        
-        NSLog(@"%@",tasks);
-        
-    }];
-    
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:request];
     
     FSDataTaskDelegate *delegate = [[FSDataTaskDelegate alloc] initWithDataTask:dataTask targetPath:path receivedLength:length];
@@ -92,6 +89,13 @@
     [self.taskDelegateInfo setObject:delegate forKey:@(dataTask.taskIdentifier)];
     
     [dataTask resume];
+}
+
+- (void)startDownloadWithItem:(id<FSDataTaskItem>)item
+{
+    NSURL *url = [item downloadUrl];
+    
+    
 }
 
 - (unsigned long long)fileSizeAtPath:(NSString *)path

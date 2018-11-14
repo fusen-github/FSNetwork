@@ -41,9 +41,10 @@ static NSString * const kControllerKey = @"controller";
   @[@{kTitleKey:@"初识网络",kControllerKey:@"FSController01"},
     @{kTitleKey:@"NSURLSessionDataTask",kControllerKey:@"FSController02"},
     @{kTitleKey:@"NSURLSessionDownloadTask",kControllerKey:@"FSController03"},
-    @{kTitleKey:@"测试",kControllerKey:@"FSController04"},
+    @{kTitleKey:@"测试04",kControllerKey:@"FSController04"},
     @{kTitleKey:@"多文件下载",kControllerKey:@"FSController05"},
-    @{kTitleKey:@"测试",kControllerKey:@"FSController06"},];
+    @{kTitleKey:@"测试06",kControllerKey:@"FSController06"},
+    @{kTitleKey:@"测试07",kControllerKey:@"FSController07"},];
     
 }
 

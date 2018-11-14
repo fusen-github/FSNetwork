@@ -1,16 +1,16 @@
 //
-//  FSDownloadListCell.m
+//  FSDownloadListCell07.m
 //  FSNetwork
 //
-//  Created by 付森 on 2018/11/9.
+//  Created by 付森 on 2018/11/13.
 //  Copyright © 2018年 付森. All rights reserved.
 //
 
-#import "FSDownloadListCell.h"
+#import "FSDownloadListCell07.h"
 #import "FSFileItem.h"
 
 
-@interface FSDownloadListCell ()
+@interface FSDownloadListCell07 ()
 
 @property (nonatomic, weak) UIButton *dlButton;
 
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation FSDownloadListCell
+@implementation FSDownloadListCell07
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -95,9 +95,9 @@
         
         [self.contentView addSubview:progressView];
         
-//        self.progressView.backgroundColor = [UIColor redColor];
-//
-//        self.progressLabel.backgroundColor = [UIColor redColor];
+        //        self.progressView.backgroundColor = [UIColor redColor];
+        //
+        //        self.progressLabel.backgroundColor = [UIColor redColor];
         
     }
     return self;
